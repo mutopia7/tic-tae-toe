@@ -6,9 +6,7 @@ let board = [
     ["", "", ""]
   ];
   
-  function printBoard() {
-    board.forEach(row => console.log(row.join(" | ")));
-  }
+
   
   function resetBoard() {
     board = [
@@ -20,5 +18,5 @@ let board = [
 
 
   
-  export { board, printBoard, resetBoard };
+  export { board, resetBoard };
   

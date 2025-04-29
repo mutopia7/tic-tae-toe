@@ -1,12 +1,26 @@
 // game.js
-import { board, printBoard } from "./board.js";
+import { board } from "./board.js";
 import { createPlayer } from "./player.js";
+
+
+const anounce = document.querySelector("#anounce");
+
 
 let player1 = createPlayer("Player 1", "X");
 let player2 = createPlayer("Player 2", "O");
 
 let currentPlayer = player1;
 let gameOver = false;
+
+// for change gameOver value in other js files 
+function setGameOver(value) {
+    gameOver = value;
+}
+
+// for change currentPlayer value in other js files
+function setCurrentPlayer(){
+    currentPlayer = player1;
+}
 
 function checkWinner(symbol) {
   // Check rows, columns, and diagonals
@@ -39,31 +53,31 @@ function isBoardFull() {
 
 function playTurn(row, col) {
   if (gameOver) {
-    console.log("The game has already ended.");
+    anounce.textContent = "The game has already ended.";
     return;
   }
 
   const success = currentPlayer.makeMove(row, col);
 
   if (!success) {
-    console.log("Please choose another cell.");
+    anounce.textContent = "Please choose another cell.";
     return;
   }
 
   if (checkWinner(currentPlayer.symbol)) {
-    console.log(`🏆 ${currentPlayer.name} wins the game!`);
+    anounce.textContent = `🏆 ${currentPlayer.name} wins the game!`;
     gameOver = true;
     return;
   }
 
   if (isBoardFull()) {
-    console.log("🔁 It's a draw.");
+    anounce.textContent = "🔁 It's a draw.";
     gameOver = true;
     return;
   }
 
   currentPlayer = currentPlayer === player1 ? player2 : player1;
-  console.log(`It's ${currentPlayer.name}'s (${currentPlayer.symbol}) turn.`);
+  anounce.textContent = `It's ${currentPlayer.name}'s (${currentPlayer.symbol}) turn.`;
 }
 
-export { playTurn};
+export { playTurn , setGameOver , setCurrentPlayer , anounce};
