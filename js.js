@@ -21,6 +21,12 @@ function createPlayer(name , symbol){
 
             board[row][col] = symbol;
             printBoard();
+
+            if (checkWinner(symbol)) {
+                console.log(`${name} with symbol: ${symbol} wins! 🎉`);
+                return true;
+            }
+
             return true;
         }
     }
@@ -59,5 +65,7 @@ const player1 = createPlayer("mohamad", "X");
 const player2 = createPlayer("hanah", "O");
 
 player1.makeMove(0, 0);
-player2.makeMove(0, 0); 
+player2.makeMove(1, 0);
+player1.makeMove(0, 1);
 player2.makeMove(1, 1);
+player1.makeMove(0, 2);
