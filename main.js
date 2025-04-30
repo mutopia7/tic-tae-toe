@@ -1,5 +1,5 @@
 // main.js
-import { anounce, playTurn, setCurrentPlayer, setGameOver} from "./js/game.js";
+import { anounce, playTurn, setCurrentPlayer, setGameOver , restart ,result} from "./js/game.js";
 import { board ,resetBoard} from "./js/board.js"; 
 
 
@@ -56,6 +56,19 @@ document.getElementById("reset-button").addEventListener("click", () => {
   setCurrentPlayer();
   anounce.textContent = "new round"
 });
+
+// Add event listener to reset-game button
+document.getElementById("reset-game-button").addEventListener("click", () => {
+  resetBoard();
+  renderBoard(); // Re-render the empty board
+  updateBoard();
+  setGameOver(false);
+  setCurrentPlayer();
+  restart();
+  result.textContent = `0 round | player 1: 0 | player 2: 0`
+  anounce.textContent = "New gmae";
+});
+
 
 // Initial render
 renderBoard();

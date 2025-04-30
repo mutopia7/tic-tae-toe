@@ -63,6 +63,11 @@ form button{
     cursor: pointer;
 }
 
+#game-board div:hover {
+    background-color: wheat;
+}
+
+
 /* Style for the reset button */
 button {
     margin-top: 20px;
@@ -81,3 +86,6 @@ button:hover {
 #anounce {
     color: red;
 }
+
+
+

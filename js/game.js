@@ -45,6 +45,12 @@ let winPlayer1 = 0;
 let winPlayer2 = 0;
 let round = 1;
 
+function restart(){
+    winPlayer1 = 0;
+    winPlayer2 = 0;
+    round = 1;
+}
+
 // for change gameOver value in other js files 
 function setGameOver(value) {
     gameOver = value;
@@ -132,4 +138,4 @@ function playTurn(row, col) {
     anounce.textContent = `It's ${currentPlayer.name}'s (${currentPlayer.symbol}) turn.`;
 }
 
-export { playTurn, setGameOver, setCurrentPlayer, anounce };
+export { playTurn, setGameOver, setCurrentPlayer, restart, anounce , result };
