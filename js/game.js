@@ -3,13 +3,40 @@ import { board } from "./board.js";
 import { createPlayer } from "./player.js";
 
 
-const anounce = document.querySelector("#anounce")
+
 
 let player1 = createPlayer("Player 1", "X");
 let player2 = createPlayer("Player 2", "O");
 
+
+const addButton = document.querySelector("#add");
+
+// create players with input users
+
+addButton.addEventListener("click" ,(e) => {
+
+    e.preventDefault()
+
+    const player1Input = document.querySelector("#player1-name").value;
+    const player2Input = document.querySelector("#player2-name").value;
+
+    player1.name = player1Input;
+    player2.name = player2Input;
+
+    console.log(player1 , player2)
+})
+
+
+
+
+
+
+
+
+const anounce = document.querySelector("#anounce")
+
 let result = document.querySelector("#result");
-result.textContent = `1 round | ${player1.name}: 0 | ${player2.name}: 0`
+result.textContent = `0 round | player 1: 0 | player 2: 0`
 
 let currentPlayer = player1;
 let gameOver = false;

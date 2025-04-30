@@ -4,19 +4,44 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    min-height: 100%; 
+    align-items: center;
+    min-height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
-  }
-  
-  /* Style for the game board */
-  #game-board {
+    margin-bottom: 5px;
+}
+
+/* Style for form section */
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+form label {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+form input {
+    padding: 5px 10px;
+}
+
+form button{
+    align-items: center;
+}
+
+
+
+/* Style for the game board */
+#game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
@@ -24,10 +49,10 @@ body {
     margin-top: 20px;
     background-color: lightslategray;
     border: 2px solid #000;
-  }
-  
-  /* Style for each cell */
-  #game-board div {
+}
+
+/* Style for each cell */
+#game-board div {
     width: 100px;
     height: 100px;
     display: flex;
@@ -36,23 +61,23 @@ body {
     background-color: white;
     font-size: 36px;
     cursor: pointer;
-  }
-  
-  /* Style for the reset button */
-  button {
+}
+
+/* Style for the reset button */
+button {
     margin-top: 20px;
     padding: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #0056b3;
-  }
-  
-  /* Style for anounce p */
-  #anounce{
+}
+
+/* Style for anounce p */
+#anounce {
     color: red;
-  }
+}
